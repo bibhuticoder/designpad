@@ -1,0 +1,227 @@
+<html>
+<title>Fabric test</title>
+
+<head>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse" style="margin-bottom: 0">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
+                    aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+                <img src="images/logo.png" height="40" width="40" class="pull-left" id="logo" />
+                <a class="navbar-brand" href="#">DesignPad</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" data-toggle="modal" data-target="#myModal">Help</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Export <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#" class="save" data-type="png">Png</a></li>                           
+                            <li><a href="#" class="save" data-type="json">JSON</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--Toolbar-->
+    <div id="toolbar">
+        <div class="toolbar-li element">
+            <button class="toggle-btn toggle-btn-active" id="btn-shape-mode">
+                <img src="images/shapes.png" />
+            </button>
+            <button class="toggle-btn" id="btn-sketch-mode">
+                <img src="images/pen.png" />
+            </button>
+            <button class="toggle-btn toggle-btn-active" id="btn-grid-mode">
+                <img src="images/grid.png" />
+            </button>            
+        </div>
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="toolbar-head">Devices</div>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <div class="toolbar-li element" draggable="true" data-type="image" ondragend="dragEnd(event)">
+                            <img src="images/phone.png" height="25" width="25" id="bi" /> Phone
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/tab.png" height="25" width="25" /> Tablet Phone
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div data-toggle="collapse" data-parent="#accordion" href="#collapseUi" class="toolbar-head">UI Elements</div>
+                    </h4>
+                </div>
+                <div id="collapseUi" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/scroll.png" height="25" width="25" /> Scroll Bar
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/slider.png" height="25" width="25" /> Slider
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/toggle.png" height="25" width="25" /> Toggle Button
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/list.png" height="25" width="25" /> ListView
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/progress.png" height="25" width="25" /> Progressbar
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/button.png" height="25" width="25" /> Button
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div data-toggle="collapse" data-parent="#accordion" href="#collapseShapes" class="toolbar-head">Shapes</div>
+                    </h4>
+                </div>
+                <div id="collapseShapes" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="toolbar-li element" draggable="true" data-type="shape" data-shape="line">
+                            <img src="images/line.png" height="25" width="25" /> Line
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="shape" data-shape="rect">
+                            <img src="images/rect.png" height="25" width="25" /> Rectangle
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="shape" data-shape="cir">
+                            <img src="images/cir.png" height="25" width="25" /> Circle
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="shape" data-shape="tri">
+                            <img src="images/tri.png" height="25" width="25" /> Triangle
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="shape" data-shape="txt">
+                            <img src="images/txt.png" height="25" width="25" /> Text
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <div data-toggle="collapse" data-parent="#accordion" href="#collapseUml" class="toolbar-head">Diagrams</div>
+                    </h4>
+                </div>
+                <div id="collapseUml" class="panel-collapse collapse">
+                    <div class="panel-body">
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/db.png" height="25" width="25" id="bi" /> Database
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/comment.png" height="25" width="25" /> Comment
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/cube.png" height="25" width="25" /> Cube
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="image">
+                            <img src="images/cloud.png" height="25" width="25" /> Cloud
+                        </div>
+                        <div class="toolbar-li element" draggable="true" data-type="shape" data-shape="arrow">
+                            <img src="images/arrow.png" height="25" width="25" /> Arrow
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="canvas-container">
+        <canvas id="canvas" width="1082" height="802" />
+    </div>
+    <!--menustrip for canvas-->
+    <ul class="dropdown-menu" id="menu-strip">
+        <li><a href="#" id="menu-copy">Copy</a></li>
+        <li><a href="#" id="menu-paste">Paste</a></li>
+        <li><a href="#" id="menu-cut">Cut</a></li>
+        <li><a href="#" id="menu-delete">Delete</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#" id="menu-group">Group</a></li>
+        <li><a href="#" id="menu-ungroup">Ungroup</a></li>
+        <li><a href="#" id="menu-front">Bring to front</a></li>
+        <li><a href="#" id="menu-back">Send to back</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#" id="menu-prop">Properties</a></li>
+    </ul>
+    <!--Property window-->
+    <div class="panel panel-success" id="prop-window">
+        <input type="text" style="width: 300px" placeholder="Label" id="prop-label" />
+        <br>
+        <br>
+        <input type="button" class="color-btn" />
+        <input type="button" class="color-btn" />
+    </div>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">
+                        <img src="images/logo.png" height="40" width="40" id="logo" /><br><br> Design Pad Help</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Hello, and welcome to designPad a 21st century Ui and diagram designer. Here you can design all sorts
+                        of diagrams and User Interface for your application.</p>
+                    <hr>
+                    <p><label>How to use</label></p>
+                    <div style="text-align: left">
+                        <ul>
+                            <li>Drag and drop the shapes and diagrams form left panel to the workspace.</li>
+                            <li>To import images, just drap and drop it from pc to the workspace.</li>
+                            <li>Export the designs as png, SVG and json forma.t</li>
+                            <li>Save it in json format to continue it later</li>
+                        </ul>
+                    </div>
+                    <hr>
+                    <p><label>Shortcuts</label></p>
+                    <div style="text-align: left">
+                        <ul>
+                            <li>Ctrl + C : Copy</li>
+                            <li>Ctrl + V : Paste</li>
+                            <li>Ctrl + X : Cut</li>
+                            <li>Ctrl + G : Group</li>
+                            <li>Ctrl + U : UnGroup</li> 
+                            <li>Ctrl + F : Bring To Front</li>
+                            <li>Ctrl + B : Send To Back</li>                                  
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="js/jsbarcode.js"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/fabric.min.js"></script>    
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

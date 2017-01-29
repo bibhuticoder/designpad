@@ -1,0 +1,148 @@
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    overflow: hidden;
+    background-color: whitesmoke;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+a:focus{
+    text-decoration: none;
+}
+
+.toolbar-head{
+    width: 100%;
+    padding: 5px;
+}
+
+.toolbar-head:hover{
+    cursor:pointer;
+}
+
+.panel-heading, .panel-body{
+    padding: 0;
+}
+
+.toolbar-li{
+    width: 100%;
+    padding: 5px;
+    padding-left: 15px;    
+    text-align: left;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-color: lightgray;
+}
+
+.toolbar-li:hover{
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+#logo{
+    margin-top: 6px;
+    margin-right: 8px;
+}
+
+#canvas-container {
+    position: absolute;
+    top: 60px;
+    left: 208px;
+    width: auto;
+    height: auto;
+    box-shadow: 1px 1px 1px black;  
+}
+
+#canvas {   
+    float: left;
+    margin: 0 auto;
+    background-color: white;
+}
+
+#menu-strip {
+    top: 200px;
+    left: 200px;
+    z-index: 100;
+    display: block;
+}
+
+#prop-window {
+    display: none;
+    position: absolute;
+    top: 200;
+    left: 200;
+    z-index: 100;
+    padding: 10px;
+}
+
+#prop-window input {
+    border-radius: 1px;
+    border-color: #d6e9c6;
+    border-width: 1px;
+    border-style: solid;
+    padding: 2px;
+    text-align: left;
+    align-items: left;
+}
+
+#prop-window input:focus {
+    outline: none;
+}
+
+#prop-window .color-btn {
+    border-style: solid;
+    width: 50px;
+    height: 50px;
+    border-color: lightgray;
+    border-width: 2px;
+    border-radius: 100%;
+    background-color: #373737;
+}
+
+#toolbar {
+    position: absolute;
+    top: 52px;
+    left: 0px;
+    height: 200%;
+    width: 200px;
+    background-color: whitesmoke;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+}
+
+button:focus{
+    outline: none;
+}
+
+.toggle-btn{
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+
+    background-color: white;
+    border-style: solid;
+    border-color: lightskyblue;
+    border-width: 1px;
+    border-radius: 100%;
+}
+
+.toggle-btn img{
+    height: 20px;
+    width: 20px; 
+}
+
+.toggle-btn:hover{
+    opacity: 0.5;
+}
+
+.toggle-btn-active{
+    background-color: skyblue;
+}
